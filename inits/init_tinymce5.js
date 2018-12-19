@@ -7,7 +7,7 @@
   plugins: [
     "advlist anchor autolink autoresize autosave charmap code emoticons fullscreen help hr",
     "image imagetools importcss insertdatetime link lists media nonbreaking paste",
-    "save searchreplace table tinydrive visualblocks visualchars wordcount noneditable"
+    "save searchreplace table visualblocks visualchars wordcount noneditable"
   ],
   toolbar: [
     'save | fullscreen | undo redo | styleselect | bold italic | link image',
@@ -16,7 +16,7 @@
   autosave_interval: "20s",
   image_advtab: true,
   image_title: true,
-  tinydrive_token_provider: "%CMSIMPLE_ROOT%?tinydrive=requesttoken",
+  file_picker_callback: "%FILEBROWSER_CALLBACK%",
   content_css: "%STYLESHEET%,%CMSIMPLE_ROOT%plugins/fa/css/font-awesome.min.css",
   importcss_append:true,
   style_formats_autohide: true,

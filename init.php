@@ -21,6 +21,63 @@ if (!defined('XH_ADM')) {
 }
 
 /**
+ * Returns the JS to activate the configured filebrowser.
+ *
+ * @return string filebrowser script
+ */
+function tinymce5_filebrowser()
+{
+    global $cf, $edit;
+
+    if (!XH_ADM) {   // no filebrowser, if editor is called from front-end
+        $_SESSION['tinymce_fb_callback'] = ''; // suppress filebrowsercall
+        return '';
+    }
+
+    $url = '';
+    $script = ''; //holds the code of the callback-function
+
+    /** 
+     * Einbindung alternativer Filebrowser, gesteuert über 
+     * $cf['filebrowser']['external'] und den Namen des aufrufenden Editors.
+     */
+    if ($cf['filebrowser']['external'] != false) {
+        $fbConnector = CMSIMPLE_BASE . 'plugins/' . 
+            $cf['filebrowser']['external'] . 
+            '/connectors/tinymce4/tinymce4.php';
+        if (is_readable($fbConnector)) {
+            include_once $fbConnector;
+            $init_function = $cf['filebrowser']['external'] . '_tinymce5_init';
+            if (function_exists($init_function)) {
+                $script = $init_function();
+                return $script;
+            }
+        }
+    }
+
+    //default filebrowser
+    $_SESSION['tinymce_fb_callback'] = 'wrFilebrowser';
+    
+    //principle occurance of XH_VERSION is checked in index.php
+    if (CMSIMPLE_XH_VERSION != '@CMSIMPLE_XH_VERSION@'
+        && version_compare(CMSIMPLE_XH_VERSION, 'CMSimple_XH 1.7', 'lt')
+    ) { 
+        $url =  CMSIMPLE_ROOT . 
+            'plugins/filebrowser/editorbrowser.php?editor=tinymce4&prefix=' . 
+            CMSIMPLE_BASE . 
+            '&base=./';
+    } else {  // CMSimple_XH v1.7 (r1518)
+        $url =  CMSIMPLE_ROOT . 
+            '?filebrowser=editorbrowser&editor=tinymce4&prefix=' . 
+            CMSIMPLE_BASE;           
+    }
+    
+    $script = file_get_contents(dirname(__FILE__) . '/filebrowser.js');
+    $script = str_replace('%URL%',  $url, $script);
+    return $script;
+}
+
+/**
  * Writes the basic JS of the editor to $hjs. No editors are actually created.
  * Multiple calls are allowed; all but the first should be ignored.
  * This is called from init_EDITOR() automatically, but not from EDITOR_replace().
@@ -60,6 +117,7 @@ function include_tinymce5()
         $tiny_src. 
         '"></script>
 	<script type="text/javascript">
+	' . tinymce5_filebrowser() . '
     var myLinkList;
 	' . $linkList . '
 	</script>
