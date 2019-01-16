@@ -6,7 +6,7 @@
  * PHP version 5
  *
  * @category  CMSimple_XH
- * @package   Tinymce4
+ * @package   Tinymce5
  * @author    Christoph M. Becker <cmbecker69@gmx.de>
  * @author    manu <info@pixolution.ch>
  * @copyright 2015 Christoph M. Becker <http://3-magi.net>
