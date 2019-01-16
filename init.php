@@ -44,7 +44,7 @@ function tinymce5_filebrowser()
     if ($cf['filebrowser']['external'] != false) {
         $fbConnector = CMSIMPLE_BASE . 'plugins/' . 
             $cf['filebrowser']['external'] . 
-            '/connectors/tinymce4/tinymce4.php';
+            '/connectors/tinymce5/tinymce5.php';
         if (is_readable($fbConnector)) {
             include_once $fbConnector;
             $init_function = $cf['filebrowser']['external'] . '_tinymce5_init';
@@ -63,12 +63,12 @@ function tinymce5_filebrowser()
         && version_compare(CMSIMPLE_XH_VERSION, 'CMSimple_XH 1.7', 'lt')
     ) { 
         $url =  CMSIMPLE_ROOT . 
-            'plugins/filebrowser/editorbrowser.php?editor=tinymce4&prefix=' . 
+            'plugins/filebrowser/editorbrowser.php?editor=tinymce5&prefix=' . 
             CMSIMPLE_BASE . 
             '&base=./';
     } else {  // CMSimple_XH v1.7 (r1518)
         $url =  CMSIMPLE_ROOT . 
-            '?filebrowser=editorbrowser&editor=tinymce4&prefix=' . 
+            '?filebrowser=editorbrowser&editor=tinymce5&prefix=' . 
             CMSIMPLE_BASE;           
     }
     

@@ -16,14 +16,18 @@ function wrFilebrowser (callback, value, meta) {
     filebrowsercallback = callback;
     filebrowserwindow = tinymce.activeEditor.windowManager.open({
         title: "File Manager",
+        size: 'medium',
         body: {
             type: "panel",
             items: [{
                 type: "htmlpanel",
-                html: '<iframe src="' + cmsURL + '" style="width:100%; height:100%"></iframe>'
+                html: '<iframe src="' + cmsURL + '" style="width:100%" onload="top.resizeIframe(this)"></iframe>'
             }]
         },
         buttons: []
     });
     return false;
+}
+function resizeIframe(obj) {
+  obj.style.height = obj.contentWindow.document.body.offsetHeight + 2 + 'px'; // no idea why border is not included
 }
