@@ -29,5 +29,10 @@
   convert_urls: false,
   entity_encoding: "raw",
   noneditable_noneditable_class: 'fa',
-  extended_valid_elements: 'span[*]'
+  extended_valid_elements: 'span[*]',
+  images_upload_url : "./?filebrowser=imageuploader&editor=tinymce5",
+//  images_upload_base_path :"",
+  images_upload_credentials: true,
+  automatic_uploads: true,
+  images_reuse_filename: false
 }
