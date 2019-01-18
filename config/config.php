@@ -2,5 +2,5 @@
 
 $plugin_cf['tinymce5']['init']="tinymce5";
 $plugin_cf['tinymce5']['utf8_marker']="äöü";
-$plugin_cf['tinymce5']['CDN_src']="https://cloud.tinymce.com/5-testing/tinymce.min.js";
+$plugin_cf['tinymce5']['CDN_src']="https://cloud.tinymce.com/5-testing/tinymce.min.js?apiKey=v5izxlywdkhoajzvg9js1hlvawd3cxd727vizn72kilpwidv";
 $plugin_cf['tinymce5']['CDN']="true";

@@ -5,14 +5,27 @@
 //  toolbar_items_size: "small",
 //  menubar:false,
   plugins: [
-    "advlist anchor autolink autoresize autosave charmap code emoticons fullscreen help hr",
+    "advlist anchor autolink autoresize autosave charmap code emoticons fontawesome fullscreen help hr",
     "image imagetools importcss insertdatetime link lists media nonbreaking paste",
     "save searchreplace table visualblocks visualchars wordcount noneditable"
   ],
+  external_plugins: {
+    "fontawesome": "%CMSIMPLE_ROOT%plugins/fa/editors/tinymce5/fontawesome/plugin.min.js"
+  },
   toolbar: [
     'save | fullscreen | undo redo | styleselect | bold italic | link image',
     'alignleft aligncenter alignright searchreplace'
   ],
+  menubar: 'edit insert view format table tools help',
+  menu: {
+    file: {title: 'File', items: 'newdocument'},
+    edit: {title: 'Edit', items: 'undo redo | cut copy paste pastetext | selectall'},
+    insert: {title: 'Insert', items: 'link media | template hr'},
+    view: {title: 'View', items: 'visualaid'},
+    format: {title: 'Format', items: 'bold italic underline strikethrough superscript subscript | formats | removeformat'},
+    table: {title: 'Table', items: 'inserttable tableprops deletetable | cell row column'},
+    tools: {title: 'Tools', items: 'spellchecker code fontawesome'}
+  },
   autosave_interval: "20s",
   image_advtab: true,
   image_title: true,
