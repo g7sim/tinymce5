@@ -5,12 +5,13 @@
 //  toolbar_items_size: "small",
 //  menubar:false,
   plugins: [
-    "advlist anchor autolink autoresize autosave charmap code emoticons fontawesome fullscreen help hr",
-    "image imagetools importcss insertdatetime link lists media nonbreaking paste",
-    "save searchreplace table visualblocks visualchars wordcount noneditable"
+    "advlist anchor autolink autoresize autosave charmap code codesample emoticons fontawesome fullscreen help hr",
+    "image imagetools importcss insertdatetime link lists media nonbreaking paste preview",
+    "save searchreplace table template visualblocks visualchars wordcount noneditable xhplugincall"
   ],
   external_plugins: {
-    "fontawesome": "%CMSIMPLE_ROOT%plugins/fa/editors/tinymce5/fontawesome/plugin.min.js"
+    "fontawesome": "%CMSIMPLE_ROOT%plugins/fa/editors/tinymce5/fontawesome/plugin.min.js",
+    "xhplugincall":"%CMSIMPLE_ROOT%plugins/tinymce5/tinymce/plugins/xhplugincall/plugin.min.js"
   },
   toolbar: [
     'save | fullscreen | undo redo | styleselect | bold italic | link image',
@@ -18,13 +19,12 @@
   ],
   menubar: 'edit insert view format table tools help',
   menu: {
-    file: {title: 'File', items: 'newdocument'},
-    edit: {title: 'Edit', items: 'undo redo | cut copy paste pastetext | selectall'},
-    insert: {title: 'Insert', items: 'link media | template hr'},
-    view: {title: 'View', items: 'visualaid'},
-    format: {title: 'Format', items: 'bold italic underline strikethrough superscript subscript | formats | removeformat'},
+    edit: {title: 'Edit', items: 'undo redo cut copy paste pastetext | selectall | searchreplace'},
+    insert: {title: 'Insert', items: 'image link media template codesample inserttable | charmap emoticons hr | nonbreaking anchor | insertdatetime'},
+//default    view: {title: 'View', items: 'code visualaid visualchars visualblocks | preview fullscreen'},
+//default    format: {title: 'Format', items: 'bold italic underline strikethrough superscript subscript | formats align| removeformat'},
     table: {title: 'Table', items: 'inserttable tableprops deletetable | cell row column'},
-    tools: {title: 'Tools', items: 'spellchecker code fontawesome'}
+    tools: {title: 'Tools', items: 'spellchecker accessibilitychecker fontawesome xhplugincall'}
   },
   autosave_interval: "20s",
   image_advtab: true,
@@ -42,6 +42,7 @@
   convert_urls: false,
   entity_encoding: "raw",
   noneditable_noneditable_class: 'fa',
+  noneditable_noneditable_class: 'mceNonEditable',  
   extended_valid_elements: 'span[*]',
   images_upload_url : "./?filebrowser=imageuploader&editor=tinymce5",
 //  images_upload_base_path :"",
