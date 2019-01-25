@@ -5,7 +5,7 @@
 //  toolbar_items_size: "small",
 //  menubar:false,
   plugins: [
-    "advlist anchor autolink autoresize autosave charmap code codesample emoticons fontawesome fullscreen help hr",
+    "advlist anchor autolink autosave charmap code codesample emoticons fontawesome fullscreen help hr",
     "image imagetools importcss insertdatetime link lists media nonbreaking paste preview",
     "save searchreplace table template visualblocks visualchars wordcount noneditable xhplugincall"
   ],
@@ -15,17 +15,20 @@
   },
   toolbar: [
     'save | fullscreen | undo redo | styleselect | bold italic | link image',
-    'alignleft aligncenter alignright searchreplace'
+    'alignleft aligncenter alignright'
   ],
   menubar: 'edit insert view format table tools help',
   menu: {
-    edit: {title: 'Edit', items: 'undo redo cut copy paste pastetext | selectall | searchreplace'},
-    insert: {title: 'Insert', items: 'image link media template codesample inserttable | charmap emoticons hr | nonbreaking anchor | insertdatetime'},
+//    edit: {title: 'Edit', items: 'undo redo cut copy paste pastetext | selectall | searchreplace'},
+//    insert: {title: 'Insert', items: 'image link media template codesample inserttable | charmap emoticons hr | nonbreaking anchor | insertdatetime'},
 //default    view: {title: 'View', items: 'code visualaid visualchars visualblocks | preview fullscreen'},
 //default    format: {title: 'Format', items: 'bold italic underline strikethrough superscript subscript | formats align| removeformat'},
-    table: {title: 'Table', items: 'inserttable tableprops deletetable | cell row column'},
+//    table: {title: 'Table', items: 'inserttable tableprops deletetable | cell row column'},
     tools: {title: 'Tools', items: 'spellchecker accessibilitychecker fontawesome xhplugincall'}
   },
+  table_advtab: true,
+  table_cell_advtab: true,
+  table_style_by_css: true,
   autosave_interval: "20s",
   image_advtab: true,
   image_title: true,
