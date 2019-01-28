@@ -1,8 +1,11 @@
 {
   selector: "%SELECTOR%",
-  menubar:false,
+//  theme: "modern",
+//  skin: "lightgray",
+//  toolbar_items_size: "small",
+//  menubar:false,
   plugins: [
-    "advlist anchor autolink autosave charmap code codesample contextmenu emoticons fontawesome fullscreen help hr",
+    "advlist anchor autolink autosave charmap code codesample emoticons fontawesome fullscreen help hr",
     "image imagetools importcss insertdatetime link lists media nonbreaking paste preview",
     "save searchreplace table template visualblocks visualchars wordcount noneditable xhplugincall"
   ],
@@ -10,10 +13,19 @@
     "fontawesome": "%CMSIMPLE_ROOT%plugins/fa/editors/tinymce5/fontawesome/plugin.min.js",
     "xhplugincall":"%CMSIMPLE_ROOT%plugins/tinymce5/tinymce/plugins/xhplugincall/plugin.min.js"
   },
-  toolbar1: "save | fullscreen code formatselect fontselect fontsizeselect styleselect",
-  toolbar2: "bold italic underline strikethrough | alignleft aligncenter alignright alignjustify cut copy paste pastetext | bullist numlist outdent indent blockquote",
-  toolbar3: "undo redo | link unlink anchor image media | hr nonbreaking removeformat visualblocks visualchars | forecolor backcolor | searchreplace | charmap",
-  toolbar4: "emoticons subscript superscript | table insertdatetime help | xhplugincall",
+  toolbar: [
+    'save | fullscreen | undo redo | styleselect | bold italic | link image',
+    'alignleft aligncenter alignright'
+  ],
+  menubar: 'edit insert view format table tools help',
+  menu: {
+//    edit: {title: 'Edit', items: 'undo redo cut copy paste pastetext | selectall | searchreplace'},
+//    insert: {title: 'Insert', items: 'image link media template codesample inserttable | charmap emoticons hr | nonbreaking anchor | insertdatetime'},
+//default    view: {title: 'View', items: 'code visualaid visualchars visualblocks | preview fullscreen'},
+//default    format: {title: 'Format', items: 'bold italic underline strikethrough superscript subscript | formats align| removeformat'},
+//    table: {title: 'Table', items: 'inserttable tableprops deletetable | cell row column'},
+    tools: {title: 'Tools', items: 'spellchecker accessibilitychecker fontawesome xhplugincall'}
+  },
   table_advtab: true,
   table_cell_advtab: true,
   table_style_by_css: true,

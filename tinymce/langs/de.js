@@ -44,7 +44,7 @@ tinymce.addI18n('de',{
 "Preformatted": "Preformatted",
 "Div": "Textblock",
 "Pre": "Vorformatierter Text",
-"Code": "Quelltext",
+"Code": "Code",
 "Paragraph": "Absatz",
 "Blockquote": "Zitat",
 "Inline": "Zeichenformate",
