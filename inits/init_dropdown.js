@@ -2,7 +2,6 @@
   selector: "%SELECTOR%",
 //  theme: "modern",
 //  skin: "lightgray",
-//  toolbar_items_size: "small",
 //  menubar:false,
   plugins: [
     "advlist anchor autolink autosave charmap code codesample emoticons fontawesome fullscreen help hr",
@@ -24,7 +23,7 @@
 //default    view: {title: 'View', items: 'code visualaid visualchars visualblocks | preview fullscreen'},
 //default    format: {title: 'Format', items: 'bold italic underline strikethrough superscript subscript | formats align| removeformat'},
 //    table: {title: 'Table', items: 'inserttable tableprops deletetable | cell row column'},
-    tools: {title: 'Tools', items: 'spellchecker accessibilitychecker fontawesome xhplugincall'}
+    tools: {title: 'Tools', items: 'fontawesome xhplugincall'}
   },
   table_advtab: true,
   table_cell_advtab: true,
