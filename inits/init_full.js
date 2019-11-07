@@ -2,7 +2,7 @@
   selector: "%SELECTOR%",
   menubar:false,
   plugins: [
-    "advlist anchor autolink autosave charmap code codesample contextmenu emoticons fontawesome fullscreen help hr",
+    "advlist anchor autolink autosave charmap code codesample emoticons fontawesome fullscreen help hr",
     "image imagetools importcss insertdatetime link lists media nonbreaking paste preview",
     "save searchreplace table template visualblocks visualchars wordcount noneditable xhplugincall"
   ],
