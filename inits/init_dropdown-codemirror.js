@@ -51,18 +51,5 @@
 //  images_upload_base_path :"",
   images_upload_credentials: true,
   automatic_uploads: true,
-  images_reuse_filename: false,
-	codemirror: {
-		indentOnInit: true, // Whether or not to indent code on init.
-		path: '../../../../codeeditor/codemirror/', // Path to CodeMirror distribution
-    main: 'codemirror-compressed.js',
-		config: {           // CodeMirror config object
-			mode: 'application/x-httpd-php',
-			lineNumbers: true
-		},
-		jsFiles: [          // Additional JS files to load
-			'mode/clike/clike.js',
-			'mode/php/php.js'
-		]
-	}
+  images_reuse_filename: false
 }

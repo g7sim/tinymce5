@@ -34,9 +34,9 @@ function inArray(key, arr)
 	editor = tinymce.activeEditor;
     var i, userSettings = editor.settings.codemirror ? editor.settings.codemirror : {};
     CMsettings = {
-		path: userSettings.path || 'codemirror-4.8',
-    indentOnInit: userSettings.indentOnInit || false,
-    disableFilesMerge: userSettings.disableFilesMerge || false,
+		path: '../../../../codeeditor/codemirror/', // Path to CodeMirror distribution
+    indentOnInit: true,
+    disableFilesMerge: false,
 		config: {// Default config
 			mode: 'htmlmixed',
 			theme: 'default',
@@ -55,28 +55,6 @@ function inArray(key, arr)
 		cssFiles: [// Default CSS files
 			'codemirror-combined.css']
 	};
-
-	if (userSettings.fullscreen) {
-		CMsettings.jsFiles.push('addon/display/fullscreen.js');
-		CMsettings.cssFiles.push('addon/display/fullscreen.css');
-	}
-
-  if (CMsettings.disableFilesMerge) {
-    if (
-      Array.isArray(userSettings.jsFiles) &&
-      Array.isArray(userSettings.cssFiles) &&
-      (userSettings.jsFiles.length > 0) &&
-      (userSettings.cssFiles.length > 0)
-    ) {
-      CMsettings.jsFiles = []
-      CMsettings.cssFiles = []
-    } else {
-      if (console) {
-        console.error('Codemirror plugin: jsFiles and cssFiles must be specified if disableFilesMerge is set to true')
-        console.warn('Codemirror plugin: ignoring disableFilesMerge')
-      }
-    }
-  }
 
   // Merge config
   for (i in userSettings.config) {
@@ -166,7 +144,7 @@ function start()
 		}
 
 		// Indent all code, if so requested:
-		if (editor.settings.codemirror.indentOnInit) {
+		if (CMsettings.indentOnInit) {
 			var last = inst.lineCount();
 			inst.operation(function() {
 				for (var i = 0; i < last; ++i) {
@@ -262,7 +240,7 @@ body {
 
 .CodeMirror {
 	height: 100%;
-	font-size: 12px;
+	font-size: 14px;
 	line-height: 18px;
 }
 
