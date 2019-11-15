@@ -54,7 +54,8 @@
   images_reuse_filename: false,
 	codemirror: {
 		indentOnInit: true, // Whether or not to indent code on init.
-		path: 'CodeMirror', // Path to CodeMirror distribution
+		path: '../../../../codeeditor/codemirror/', // Path to CodeMirror distribution
+    main: 'codemirror-compressed.js',
 		config: {           // CodeMirror config object
 			mode: 'application/x-httpd-php',
 			lineNumbers: true
