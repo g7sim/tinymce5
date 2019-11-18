@@ -9,6 +9,9 @@
  *
  * Copyright 2013-2014 Web Power, www.webpower.nl
  * @author Arjan Haverkamp
+ * 
+ * adapted for CMB's codeeditor plugin
+ * 15.11.2019 by manu www.pixolution.ch
  */
 
 // Global vars:
@@ -32,8 +35,8 @@ function inArray(key, arr)
 
 	tinymce = parent.tinymce;
 	editor = tinymce.activeEditor;
-    var i, userSettings = editor.settings.codemirror ? editor.settings.codemirror : {};
-    CMsettings = {
+  var i, userSettings = editor.settings.codemirror ? editor.settings.codemirror : {};
+  CMsettings = {
 		path: '../../../../codeeditor/codemirror/', // Path to CodeMirror distribution
     indentOnInit: true,
     disableFilesMerge: false,
@@ -55,6 +58,9 @@ function inArray(key, arr)
 		cssFiles: [// Default CSS files
 			'codemirror-combined.css']
 	};
+  
+  if (typeof userSettings.config.theme !== 'undefined') 
+    CMsettings.cssFiles.push('theme/' + userSettings.config.theme + '.css');
 
   // Merge config
   for (i in userSettings.config) {

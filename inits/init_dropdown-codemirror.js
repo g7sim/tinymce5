@@ -51,5 +51,10 @@
 //  images_upload_base_path :"",
   images_upload_credentials: true,
   automatic_uploads: true,
-  images_reuse_filename: false
+  images_reuse_filename: false,
+  codemirror:{
+    config: {
+      theme: 'zenburn'
+    }
+  }
 }
